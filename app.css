@@ -11,8 +11,8 @@ h2 {
 
 /* Carousel Item */
 .fifty_fifty_item {
-   /* border: solid 1px red; */
    position: relative;
+   padding: 0 2rem;
    width: 800px;
    height: 400px;
    display: flex;
@@ -74,7 +74,7 @@ h2 {
 
 /* Content Group - Title & Content */
 .fifty_fifty_content_group {
-   margin-top: 1rem;
+   margin: 3rem;
    padding-left: 2.5rem;
    display: flex;
    flex-direction: column;
