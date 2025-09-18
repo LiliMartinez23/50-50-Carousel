@@ -40,7 +40,7 @@ h2 {
    height: 400px;
    margin-left: -46px;
    display: inline-block;
-   background-image: url('50-50-Component-Black.png');
+   background-image: url('img/50-50-Component-Black.png');
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -53,7 +53,7 @@ h2 {
    height: 400px;
    margin-left: -46px;
    display: inline-block;
-   background-image: url('50-50-Component-Gray.png');
+   background-image: url('img/50-50-Component-Gray.png');
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -66,7 +66,7 @@ h2 {
    height: 400px;
    margin-left: -46px;
    display: inline-block;
-   background-image: url('50-50-Component-Maroon.png');
+   background-image: url('img/50-50-Component-Maroon.png');
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;

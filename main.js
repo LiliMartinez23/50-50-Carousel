@@ -29,7 +29,7 @@
   carousel.appendChild(track);
 
   function updatePosition() {
-    const offset = -index * items[0].offsetWidth;
+    const offset = -index * items[0].offsetWidth + 20;
     track.style.transform = `translateX(${offset}px)`;
   }
 
