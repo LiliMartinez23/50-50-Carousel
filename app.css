@@ -1,0 +1,118 @@
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+h2 {
+   color: #fff;
+}
+
+/* Carousel Item */
+.fifty_fifty_item {
+   /* border: solid 1px red; */
+   position: relative;
+   width: 800px;
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Left */
+.fifty_fifty_left {
+   position: relative;
+   width: 400px;
+   height: 400px;
+   background-blend-mode: plus-darker;
+   display: inline-block;
+}
+.fifty_fifty_left img {
+   width: 100%;
+   height: auto;
+}
+
+/* Right - Black */
+.fifty_fifty_right_black {
+   position: relative;
+   width: 400px;
+   height: 400px;
+   margin-left: -46px;
+   display: inline-block;
+   background-image: url('50-50-Component-Black.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Right - Gray */
+.fifty_fifty_right_gray {
+   position: relative;
+   width: 400px;
+   height: 400px;
+   margin-left: -46px;
+   display: inline-block;
+   background-image: url('50-50-Component-Gray.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Right - Maroon */
+.fifty_fifty_right_maroon {
+   position: relative;
+   width: 400px;
+   height: 400px;
+   margin-left: -46px;
+   display: inline-block;
+   background-image: url('50-50-Component-Maroon.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Content Group - Title & Content */
+.fifty_fifty_content_group {
+   margin-top: 1rem;
+   padding-left: 2.5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Title */
+.fifty_fifty_title {
+   width: 270px;
+   font-family: 'Oswald';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 14px;
+   color: #fff;
+}
+
+/* Content */
+.fifty_fifty_content {
+   width: 270px;
+   font-family: 'Vollkorn';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 12px;
+   color: #fff;
+}
+
+/* Buttons */
+.fifty_fifty_buttons {
+   padding: 10px 40px 0 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+   align-items: end;
+}
+
+.fifty_fifty_button_left,
+.fifty_fifty_button_right {
+   padding: 0.25rem;
+   cursor: pointer;
+}
