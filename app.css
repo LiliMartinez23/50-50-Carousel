@@ -5,10 +5,6 @@ body {
    align-items: center;
 }
 
-h2 {
-   color: #fff;
-}
-
 /* Carousel Item */
 .fifty_fifty_item {
    position: relative;
@@ -75,7 +71,6 @@ h2 {
 /* Content Group - Title & Content */
 .fifty_fifty_content_group {
    margin-top: 1.5rem;
-   padding-left: 2.5rem;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -85,10 +80,13 @@ h2 {
 /* Title */
 .fifty_fifty_title {
    width: 270px;
+}
+
+.fifty_fifty_title h2 {
    font-family: 'Oswald';
    font-style: normal;
    font-weight: 700;
-   font-size: 14px;
+   font-size: 20px;
    color: #fff;
 }
 

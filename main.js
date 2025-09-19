@@ -1,51 +1,88 @@
-// main.js
 (() => {
   const carousel = document.querySelector('.fifty_fifty_carousel');
   if (!carousel) return;
 
-  const items = Array.from(carousel.querySelectorAll('.fifty_fifty_item'));
-  if (items.length === 0) return;
+  // Collect initial items (real slides)
+  const realItems = Array.from(carousel.querySelectorAll('.fifty_fifty_item'));
+  if (realItems.length === 0) return;
 
-  let index = 0;
+  let index = 1; // start at first REAL slide after we add the leading clone
   let touchStartX = 0;
   let touchEndX = 0;
+
+  // Measure once (you can add a resize handler if your slides are responsive)
+  const itemWidth = realItems[0].offsetWidth;
 
   // Style container for sliding
   carousel.style.display = 'flex';
   carousel.style.overflow = 'hidden';
   carousel.style.position = 'relative';
-  carousel.style.width = `${items[0].offsetWidth}px`; // lock container to item width
+  carousel.style.width = `${itemWidth}px`; // lock container to item width
 
-  // Row of items
+  // Create track (row)
   const track = document.createElement('div');
   track.style.display = 'flex';
   track.style.transition = 'transform 0.5s ease';
-  track.style.width = `${items.length * items[0].offsetWidth}px`;
+  track.style.willChange = 'transform';
 
-  // Move items into track
-  items.forEach((el) => {
-    track.appendChild(el);
-  });
+  // Build slides = [lastClone, ...realItems, firstClone]
+  const firstClone = realItems[0].cloneNode(true);
+  const lastClone = realItems[realItems.length - 1].cloneNode(true);
+
+  // To avoid duplicate IDs inside clones, strip IDs if your markup uses them
+  [firstClone, lastClone].forEach(el => el.removeAttribute('id'));
+
+  track.appendChild(lastClone);
+  realItems.forEach(el => track.appendChild(el));
+  track.appendChild(firstClone);
+
+  // Set track width to account for clones
+  track.style.width = `${(realItems.length + 2) * itemWidth}px`;
   carousel.appendChild(track);
 
+  function setTransition(enabled) {
+    track.style.transition = enabled ? 'transform 0.5s ease' : 'none';
+  }
+
   function updatePosition() {
-    const offset = -index * items[0].offsetWidth + 20;
+    const offset = -index * itemWidth + 20; // no magic +20
     track.style.transform = `translateX(${offset}px)`;
   }
 
   function next() {
-    if (index < items.length - 1) {
-      index++;
-      updatePosition();
-    }
+    index++; // always go forward
+    setTransition(true);
+    updatePosition();
   }
 
   function prev() {
-    if (index > 0) {
-      index--;
-      updatePosition();
-    }
+    index--; // go backward when needed (left arrow / swipe right)
+    setTransition(true);
+    updatePosition();
   }
+
+  // Seamless looping: after each animated move, correct if we’re on a clone
+  track.addEventListener('transitionend', () => {
+    // Moved past the last REAL slide onto the appended firstClone
+    if (index === realItems.length + 1) {
+      setTransition(false);     // turn off transition for the instant jump
+      index = 1;                // jump to the real first slide
+      updatePosition();
+      // Force reflow so the next transition re-enables cleanly
+      // eslint-disable-next-line no-unused-expressions
+      track.offsetHeight;
+      setTransition(true);
+    }
+    // Moved before the first REAL slide onto the prepended lastClone
+    if (index === 0) {
+      setTransition(false);
+      index = realItems.length; // jump to the real last slide
+      updatePosition();
+      // eslint-disable-next-line no-unused-expressions
+      track.offsetHeight;
+      setTransition(true);
+    }
+  });
 
   // Button clicks
   carousel.addEventListener('click', (e) => {
@@ -81,6 +118,13 @@
     touchEndX = 0;
   });
 
-  // Init
+  // Init: position track to the first REAL slide
+  setTransition(false);
   updatePosition();
+  // eslint-disable-next-line no-unused-expressions
+  track.offsetHeight; // reflow
+  setTransition(true);
+
+  // Optional: handle resizes if slides are responsive
+  // window.addEventListener('resize', () => { ...recompute widths/position... });
 })();
