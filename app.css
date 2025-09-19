@@ -74,7 +74,7 @@ h2 {
 
 /* Content Group - Title & Content */
 .fifty_fifty_content_group {
-   margin: 3rem;
+   margin-top: 1.5rem;
    padding-left: 2.5rem;
    display: flex;
    flex-direction: column;
@@ -104,11 +104,12 @@ h2 {
 
 /* Buttons */
 .fifty_fifty_buttons {
-   padding: 10px 40px 0 0;
+   position: absolute;       /* anchor the whole control group */
+   right: 16px;
+   bottom: 16px;
    display: flex;
-   flex-direction: row;
-   justify-content: end;
-   align-items: end;
+   gap: 8px;
+   z-index: 2;
 }
 
 .fifty_fifty_button_left,
