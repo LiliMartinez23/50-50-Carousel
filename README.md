@@ -13,9 +13,9 @@ This project is a responsive **50/50 Carousel component** built with **HTML, CSS
 - **Font Awesome Integration:** Uses icons for navigation arrows.
 
 ## Project Structure
---> index.html
-  --> app.css
-  --> main.js
+--> index.html\
+  --> app.css\
+  --> main.js\
   --> img/
 
 ## Getting Started
