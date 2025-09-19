@@ -34,13 +34,17 @@
   }
 
   function next() {
-    index = (index + 1) % items.length;
-    updatePosition();
+    if (index < items.length - 1) {
+      index++;
+      updatePosition();
+    }
   }
 
   function prev() {
-    index = (index - 1 + items.length) % items.length;
-    updatePosition();
+    if (index > 0) {
+      index--;
+      updatePosition();
+    }
   }
 
   // Button clicks
