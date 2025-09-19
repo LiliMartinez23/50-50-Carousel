@@ -2,6 +2,8 @@
 
 This project is a responsive **50/50 Carousel component** built with **HTML, CSS, and JavaScript**. It features a split design layout with images on the left and styled controls panels on the right, including seamless looping, keyboard navigation, button controls, and touch/swipe support.
 
+<img width="870" height="522" alt="image" src="https://github.com/user-attachments/assets/05ef7731-b8ac-49b5-abaa-4c839b699148" />
+
 ## Features
 - **Split Layout:** Each carousel item displays an image on the left and a styled content block on the right.
 - **Multiple Themes:** Right-side panels come in **black, gray**, and **maroon** styles, using background images for variety.
