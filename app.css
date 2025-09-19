@@ -54,6 +54,12 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
 }
+.fifty_fifty_right_gray .fifty_fifty_title h2 {
+   color: #000;
+}
+.fifty_fifty_right_gray .fifty_fifty_content {
+   color: #000;
+}
 
 /* Right - Maroon */
 .fifty_fifty_right_maroon {
