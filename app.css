@@ -81,7 +81,6 @@ body {
 .fifty_fifty_title {
    width: 270px;
 }
-
 .fifty_fifty_title h2 {
    font-family: 'Oswald';
    font-style: normal;
@@ -109,7 +108,6 @@ body {
    gap: 8px;
    z-index: 2;
 }
-
 .fifty_fifty_button_left,
 .fifty_fifty_button_right {
    padding: 0.25rem;
