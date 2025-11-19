@@ -1,4 +1,4 @@
-body {
+.carousel-container {
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -8,7 +8,6 @@ body {
 /* Carousel Item */
 .fifty_fifty_item {
    position: relative;
-   padding: 0 2rem;
    width: 800px;
    height: 400px;
    display: flex;
@@ -76,7 +75,7 @@ body {
 
 /* Content Group - Title & Content */
 .fifty_fifty_content_group {
-   margin-top: 1.5rem;
+   padding: 1rem 0.5rem 2.5rem 0.5rem;
    display: flex;
    flex-direction: column;
    justify-content: center;

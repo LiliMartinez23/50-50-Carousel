@@ -14,7 +14,7 @@
   const itemWidth = realItems[0].offsetWidth;
 
   // Style container for sliding
-  carousel.style.display = 'flex';
+  //carousel.style.display = 'flex';
   carousel.style.overflow = 'hidden';
   carousel.style.position = 'relative';
   carousel.style.width = `${itemWidth}px`; // lock container to item width
